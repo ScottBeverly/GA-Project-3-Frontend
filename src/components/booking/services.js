@@ -22,6 +22,7 @@ export default function Services() {
 						     onClick={ () => appProps.handleServiceClick('Walk')}/>
 						<p className ='links'>Walk</p>
 					</Link>
+					<p>Walk</p>
 				</div>
 				<div className={'booking-service-groom-icon'}>
 					<Link to={'/calendar'}>
@@ -30,6 +31,7 @@ export default function Services() {
 						     onClick={ () => appProps.handleServiceClick('Groom')}/>
 						<p className ='links'>Groom</p>
 					</Link>
+					<p>Groom</p>
 				</div>
 				<div className={'booking-service-overnight-icon'}>
 					<Link to={'/calendar'}>
@@ -38,6 +40,7 @@ export default function Services() {
 						     onClick={ () => appProps.handleServiceClick('Overnight')}/>
 						<p className ='links'>Overnight</p>
 					</Link>
+					<p>Overnight</p>
 				</div>
 			</div>
 		</div>

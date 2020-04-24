@@ -4,10 +4,6 @@
     box-sizing: border-box;
 }
 
-/* nav, footer {
-    display: none;
-} */
-
 .auth-body {
     background-image: url("../../assets/background.png");
     background-position: center;
@@ -35,7 +31,15 @@
     min-height: 100vh;
 }
 
-.Login, .SignUp {
+.Pet-Confirmation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.Login, .SignUp, .All-Pets-Container, .Profile {
     width: 85%;
     font-family: Roboto;
     background: rgba(249, 247, 247, 0.9);
@@ -44,10 +48,59 @@
     text-align: center;
 }
 
-.User-Login, .Create-Account {
+.User-Login, .Create-Account, .Profile-Title, .All-Pets-Box h1 {
     color: #5E5D5D;
     padding: 30px;
     font-size: 1.7em;
+}
+
+.All-Pets-Container h1 {
+    color: #353535;
+    padding: 10px;
+    font-size: 1.3em;
+}
+
+.Profile {
+    margin: auto;
+}
+
+.User-Profile-Info-Container {
+    margin: 20px 0;
+    padding-top: 30px;
+    display: flex;
+    flex-wrap: wrap;    
+}
+
+.All-Pets-Box h1 {
+    font-family: Roboto;
+    font-weight: 400;
+}
+
+.User-Profile-Item {
+    font-weight: 500;
+    font-family: Roboto;
+    color: #353535;
+    width: 85%;
+    padding: 12px 20px 5px 20px;
+    margin: 8px auto;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    background: #ffffff; 
+    text-align: left;
+}
+
+.All-Pets {
+    display: flex;
+    justify-content: space-around;
+}
+
+.Each-Pet {
+    display: block;
+    align-items: center;
+}
+
+.Pet-Image {
+    height: 150px;
 }
 
 .Login-Form, .SignUp-Form {
@@ -80,21 +133,19 @@
     background: #ffffff;   
 }
 
-/* PSA: If you decide to touch the button CSS, or even think about just breathing near it... 
-pls reconsider. I am so tired. */
-
 .SignUp-Form-Button {
     color:#ffffff;
+    font-family: Roboto;
     border: none;
     border-radius: 1px;
+    font-weight: 700;
     width: 20%;
     margin: 20px 0 8px 0;
     background-color: #e56c4e;
     padding: 10px 15px;
     text-align: center;
     font-size: 1.2em;
-    font-weight: 600;
-    -webkit-text-stroke: 0.5px #e56c4e;
+    font-weight: 500;
     letter-spacing: 1.4px;
     align-items: center;
     align-content: center;
@@ -104,6 +155,7 @@ pls reconsider. I am so tired. */
 
 .Login-Form-Button {
     color:#ffffff;
+    font-family: Roboto;
     border: none;
     border-radius: 1px;
     width: 20%;
@@ -112,8 +164,7 @@ pls reconsider. I am so tired. */
     padding: 10px 15px;
     text-align: center;
     font-size: 1.2em;
-    font-weight: 600;
-    -webkit-text-stroke: 0.5px #e56c4e;
+    font-weight: 500;
     letter-spacing: 1.4px;
     align-items: center;
     align-content: center;
@@ -121,9 +172,34 @@ pls reconsider. I am so tired. */
     justify-content: center;
 }
 
-.Login-Form-Button:hover, .SignUp-Form-Button:hover {
+.Pet-Button {
+    color:#ffffff;
+    font-family: Roboto;
+    border: none;
+    border-radius: 1px;
+    font-weight: 700;
+    width: 20%;
+    margin: 20px 0 8px 0;
+    background-color: #e56c4e;
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 500;
+    letter-spacing: 1.4px;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    justify-content: center;
+}
+
+.Login-Form-Button:hover {
       cursor: pointer;
       opacity: 90%;
+}
+
+.SignUp-Form-Button:hover {
+    cursor: pointer;
+    opacity: 90%;
 }
 
 p.login-prompt {
@@ -147,20 +223,27 @@ p.login-prompt > a:hover {
     text-decoration-color: #e56c4e;
 }
 
-/* .SignUp p, .SignUp a {
-    color: #353535;
-    margin-top: 0;
-    padding-bottom: 14px;
-    font-family: Roboto;
-    font-size: .9em;
-    text-decoration:none;
-} */
+.Profile {
+    position: relative;
+}
 
+.Profile-X {
+    width: 15px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
 
-/* a:visited {
-    color: #353535;
-    text-decoration: none;
-} */
+.Profile {
+    position: relative;
+}
+
+.Profile-X {
+    width: 15px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
 
 @media(min-width: 375px) {
     .Login-Image {
@@ -171,7 +254,7 @@ p.login-prompt > a:hover {
         top: 20px;   
     }
 
-    .User-Login, .Create-Account {
+    .User-Login, .Create-Account, .Profile-Title, .All-Pets-Box h1 {
         padding: 40px;
         font-size: 1.5em;
     }
@@ -194,7 +277,7 @@ p.login-prompt > a:hover {
         top: 20px;   
     }
 
-    .User-Login, .Create-Account {
+    .User-Login, .Create-Account, .Profile-Title, .All-Pets-Box h1 {
         padding: 30px;  
         font-size: 1.3em;      
     } 
@@ -217,13 +300,21 @@ p.login-prompt > a:hover {
         width: 50%;
     }
 
-    .User-Login, .Create-Account {
+    .User-Login, .Create-Account, .Profile-Title, .All-Pets-Box h1 {
         padding: 30px;  
         font-size: 1.5em;      
     }    
+    .User-Profile-Item {
+        padding-right: 1px;
+        width: 48%;
+        
+    }
 }
 
 @media(min-width: 1024px) {
+    .Profile {
+        margin-top: 50px;
+    }
     .Login-Image {
         background: url("../../assets/logo-white.png");
         position: absolute;
@@ -233,7 +324,7 @@ p.login-prompt > a:hover {
     }
 }
 
-.User-Login, .Create-Account {
+.User-Login, .Create-Account, .Profile-Title, .All-Pets-Box h1 {
     font-size: 2em;
 }
 
@@ -242,8 +333,9 @@ p.login-prompt > a:hover {
     font-size: .9em;   
 }
 
-.Login-Form-Button, .SignUp-Form-Button {
+.Login-Form-Button {
     color:#ffffff;
+    font-family: Roboto;
     border: none;
     border-radius: 1px;
     width: 120px;
@@ -252,8 +344,24 @@ p.login-prompt > a:hover {
     padding: 10px 15px;
     text-align: center;
     font-size: 1.2em;
-    font-weight: 600;
-    -webkit-text-stroke: 0.5px #e56c4e;
+    letter-spacing: 1.4px;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    justify-content: center;
+}
+
+.SignUp-Form-Button {
+    color:#ffffff;
+    font-family: Roboto;
+    border: none;
+    border-radius: 1px;
+    width: 120px;
+    margin: 20px 0 8px 0;
+    background-color: #e56c4e;
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 1.2em;
     letter-spacing: 1.4px;
     align-items: center;
     align-content: center;

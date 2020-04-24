@@ -4,13 +4,14 @@ import TimePicker from 'react-time-picker';
 import {AppContext} from "../../App";
 import {Link} from "react-router-dom";
 import Header from "../header/Header";
+import Footer from '../Footer';
 import './Calendar.css';
 import 'react-calendar/dist/Calendar.css';
 
 function CalendarApp() {
 	const appProps = useContext(AppContext)
 	return (
-		<div>
+		<div id={'calendar-wrapper'}>
 			<Header/>
 			<h2 id={'cal-service-title'}>{appProps.service}</h2>
 			<h3 id={'cal-sub-heading'}>Select a date/time.</h3>
@@ -29,6 +30,7 @@ function CalendarApp() {
 			<Link to={'/localproviders'}>
 				<button id={'cal-button'}>CONTINUE</button>
 			</Link>
+			<Footer />
 		</div>
 	);
 }
